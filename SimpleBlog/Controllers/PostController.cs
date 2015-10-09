@@ -11,7 +11,7 @@ namespace SimpleBlog.Controllers
         // GET: Post
         public ActionResult Index()
         {
-            return Content("This will display a list of posts.");
+            return View();
         }
     }
 }
