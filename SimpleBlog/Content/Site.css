@@ -5,8 +5,7 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -18,5 +17,16 @@ textarea {
 
 .form-style {
     margin: 75px;
-    border: none;
+    padding: 0 15px;
+    border-right: solid thin black;
+}
+
+div.login-message {
+    margin-top: 75px;
+    padding: 0 15px;
+    vertical-align: middle;
+}
+
+.login-message, h1 {
+    margin-bottom: -.5em;
 }
