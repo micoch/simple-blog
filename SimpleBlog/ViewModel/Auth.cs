@@ -8,10 +8,10 @@ namespace SimpleBlog.ViewModel
 {
     public class AuthLogin
     {
-        [Required]
+        [Required(ErrorMessage = "Please enter a valid username.")]
         public string Username { get; set; }
 
-        [Required, DataType(DataType.Password)]
+        [Required(ErrorMessage = "Please enter a valid password."), DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }
