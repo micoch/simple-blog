@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SimpleBlog.ViewModel;
+using System.Web.Security;
 
 namespace SimpleBlog.Controllers
 {
@@ -17,9 +18,24 @@ namespace SimpleBlog.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(AuthLogin form)
+        
+        public ActionResult Login(AuthLogin form, string returnUrl)
         {
-            return View();
+
+            if (!ModelState.IsValid)
+                return View(form);
+            
+
+            FormsAuthentication.SetAuthCookie(form.Username, true);
+
+
+            if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+
+            return Content(returnUrl);
+            
         }
     }
 }
