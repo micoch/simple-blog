@@ -34,7 +34,7 @@ namespace SimpleBlog.Controllers
                 return Redirect(returnUrl);
             }
 
-            return Content(returnUrl);
+            return RedirectToRoute("home");
             
         }
     }
